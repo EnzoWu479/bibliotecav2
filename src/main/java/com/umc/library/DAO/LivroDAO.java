@@ -38,6 +38,10 @@ public class LivroDAO {
         return livroConverter.convertFromDto(livroCollection.find(eq("_id",
                 new ObjectId(livroId))).first());
     }
+    public List<Livro> buscarLivroPorAutor(String autor) {
+        ArrayList<Document> documents = livroCollection.find(eq("autor", autor)).into(new ArrayList<>());
+        return livroConverter.createFromDtos(documents);
+    }
 
     public long atualizarLivro(String livroId, Livro livroAtualizado) {
         UpdateResult result = livroCollection.replaceOne(eq("_id",

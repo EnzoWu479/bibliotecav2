@@ -39,9 +39,14 @@ public class ListaLivrosController {
         listaLivrosFrame.renderizarTabela(livros);
     }
     private void reservarLivro() {
-        // Implemente a lógica de reserva
-        JOptionPane.showMessageDialog(listaLivrosFrame, "A funcionalidade de reservar livro está em desenvolvimento.",
-                "Em Desenvolvimento", JOptionPane.INFORMATION_MESSAGE);
+        mainController.showReservaLivroView();
+
+    }
+
+    private void pesquisarPorAutor() {
+        String autor = "";
+        List<Livro> livros = livroDAO.buscarLivroPorAutor(autor);
+        listaLivrosFrame.renderizarTabela(livros);
     }
 
     private void devolverLivro() {
