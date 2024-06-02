@@ -43,6 +43,7 @@ public class ListaLivrosController {
 
     }
 
+    // TODO: Conectar a pesquisa a um campo de texto e um input
     private void pesquisarPorAutor() {
         String autor = "";
         List<Livro> livros = livroDAO.buscarLivroPorAutor(autor);
